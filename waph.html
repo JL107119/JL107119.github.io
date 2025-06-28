@@ -63,14 +63,15 @@
             <div id="second" class="hand"></div>
         </div>
     </div>
-
-    <div class="text-center mt-4">
-        <input id="data" placeholder="Enter your name" class="form-control w-50 mx-auto mb-2">
-        <button class="btn btn-success" onclick="getEcho()">Ajax Echo</button>
-        <button class="btn btn-primary" onclick="jQueryAjax()">jQuery GET</button>
-        <button class="btn btn-warning" onclick="jQueryAjaxPost()">jQuery POST</button>
-        <button class="btn btn-secondary" onclick="guessAge($('#data').val())">Guess Age</button>
-    </div>
+    <i>Ajax requests</i><br>
+        Your input:
+            <input name="data"
+                    onkeypress="console.log('You have pressed a key')" id="data">
+            <input class="button round" type="button" value="Ajax echo" onclick="getEcho()">
+            <input class="button round" type="button" value="Ajax jQuery GET" onclick="jQueryAjax()">
+            <input class="button round" type="button" value="Ajax jQuery POST" onclick="jQueryAjaxPost()">
+            <input class="button round" type="button" value="guess Age" onclick="guessAge($('#data').val())">
+            <div id="response"></div>
 
     <div id="response" class="text-center mt-3"></div>
 

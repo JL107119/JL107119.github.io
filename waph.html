@@ -76,13 +76,65 @@
     <div id="joke" class="text-center mt-4"></div>
     <div id="xkcd" class="text-center mt-3"></div>
 
+    <section class="mt-5">
+        <h3 class="text-center">Resume</h3>
+        <div class="card p-4">
+            <h4>Justin Lewis Nadindla</h4>
+            <p><strong>Location:</strong> Cincinnati, OH<br>
+            <strong>Phone:</strong> (513) 254-0487<br>
+            <strong>Email:</strong> nonejs@mail.uc.edu</p>
+
+            <h5>Education</h5>
+            <ul>
+                <li><strong>University of Cincinnati</strong> | Cincinnati, OH<br>
+                Bachelor of Science, Computer Science – Graduating: May 2028<br>
+                Primary Coursework: Computer Systems, Computer Programming</li>
+            </ul>
+
+            <h5>Skills</h5>
+            <ul>
+                <li><strong>Programming:</strong> Java, JavaScript, Python, C++, HTML, CSS, MATLAB, Microsoft Excel</li>
+                <li><strong>Languages:</strong> English, Telugu, Hindi, Tamil</li>
+                <li><strong>Other:</strong> Web Development</li>
+            </ul>
+
+            <h5>Projects</h5>
+            <ul>
+                <li><strong>Task Manager Desktop App</strong> – Jan 2025 – Apr 2025<br>
+                    Developed with Python and Tkinter; included task editing, search, filtering, and completion tracking.</li>
+                <li><strong>Information Security & Assurance</strong> – Aug 2024 – Dec 2024<br>
+                    Led a team of 5 to develop a security strategy; managed meetings and task assignment.</li>
+                <li><strong>Data Structures</strong> – Aug 2024 – Dec 2024<br>
+                    Collaborated on C++ projects involving dynamic memory, templates, and linked lists.</li>
+                <li><strong>Engineering & Design Thinking</strong> – Sep 2023 – Apr 2024<br>
+                    Designed a semi-autonomous robot; served as both lead programmer and builder.</li>
+                <li><strong>Developed a Website</strong> – Apr – May 2022<br>
+                    Built a Computer Science education website using JavaScript, HTML, and CSS.</li>
+            </ul>
+
+            <h5>Activities</h5>
+            <ul>
+                <li><strong>FTC Robotics Team</strong> – Jan 2022 – May 2022<br>
+                    Secured funding from 15+ local sponsors; strengthened team communication and operations.</li>
+                <li><strong>IEM Soccer Team</strong> – Sept – Nov 2023<br>
+                    Contributed to team dynamics and collaboration through active soccer participation.</li>
+            </ul>
+
+            <h5>Awards & Honors</h5>
+            <ul>
+                <li>Students in STEM Scholarship</li>
+            </ul>
+
+            <p><strong>Available for Co-op:</strong> Fall 2025</p>
+        </div>
+    </section>
+
     <footer class="text-center mt-5">
         <small>Disclaimer: The public/third-party services below generate their contents. I am not responsible for their accuracy or appropriateness.</small><br>
         <a href="https://info.flagcounter.com/" target="_blank"><img src="https://s11.flagcounter.com/count2/BkYF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter"></a>
     </footer>
 
     <script>
-        // Show/hide email
         function showhideEmail() {
             const emailDiv = document.getElementById("email");
             if (emailDiv.innerHTML.includes("Show")) {
@@ -92,13 +144,11 @@
             }
         }
 
-        // Digital Clock
         function updateDigitalClock() {
             document.getElementById("digit-clock").innerText = "Current time: " + new Date().toLocaleTimeString();
         }
         setInterval(updateDigitalClock, 1000);
 
-        // Analog Clock
         function updateAnalogClock() {
             const now = new Date();
             const hour = now.getHours() % 12;
@@ -110,7 +160,6 @@
         }
         setInterval(updateAnalogClock, 1000);
 
-        // Cookie-based welcome message
         const visitKey = "lastVisit";
         const lastVisit = localStorage.getItem(visitKey);
         const now = new Date().toString();
@@ -121,7 +170,6 @@
         }
         localStorage.setItem(visitKey, now);
 
-        // Basic Echo function
         function getEcho() {
             const input = document.getElementById("data").value;
             if (!input) return;
@@ -156,7 +204,6 @@
             $("#response").html("Hi " + name + ", your age should be " + data.age);
         }
 
-        // Joke API every 1 minute
         async function loadJoke() {
             const res = await fetch("https://v2.jokeapi.dev/joke/Any?type=single");
             const data = await res.json();
@@ -165,7 +212,6 @@
         setInterval(loadJoke, 60000);
         loadJoke();
 
-        // XKCD comic
         axios.get("https://xkcd.now.sh/?comic=latest").then(response => {
             const img = document.createElement("img");
             img.src = response.data.img;
